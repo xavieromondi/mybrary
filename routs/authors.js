@@ -3,8 +3,13 @@ const Author = require("../model/authors");
 
 const rout = express.Router();
 
-rout.get("/", (req, res) => {
-  res.render("authors/index");
+rout.get("/", async (req, res) => {
+  try {
+    const author = await Author.find({});
+    res.render("authors/index", { authors: author });
+  } catch {
+    res.redirect("/");
+  }
 });
 
 rout.get("/new", (req, res) => {
