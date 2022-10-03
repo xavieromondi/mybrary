@@ -12,7 +12,7 @@ rout.get("/new", (req, res) => {
 });
 
 rout.post("/", (req, res) => {
-  res.send("posts");
+  res.send(req.body.name);
 });
 
 module.exports = rout;

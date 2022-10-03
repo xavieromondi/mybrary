@@ -1,4 +1,3 @@
-const { text } = require("express");
 const mongoose = require("mongoose");
 
 const authorsSchema = new mongoose.Schema({
@@ -8,4 +7,4 @@ const authorsSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model(Author, authorsSchema);
+module.exports = mongoose.model("Author", authorsSchema);
